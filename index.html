@@ -13,11 +13,11 @@
 <body ng-controller="myController">
     <div style="margin-bottom: 5px;">
         <img src="img/cocoa.png" alt="cocoa logo" id="cocoaLogo">
-        <span style="color: white; font-size: 40px; font-family: sans;">CocoaHeads Talks BH</span>
+        <span style="color: white; font-size: 40px;">CocoaHeads Talks BH</span>
     </div>
     <div id="container" style="background-color: black; border: 5px solid #E52B61; border-radius: 10px; margin-bottom: 10px;">
         <div id="entryInputContainer">
-            <input id="entryInput" style="width: 90%" ng-keyup="$event.keyCode == 13 && addMessage()" type="text" ng-model="newMessageText" autofocus>
+            <input id="entryInput" style="width: 85%" ng-keyup="$event.keyCode == 13 && addMessage()" type="text" ng-model="newMessageText" autofocus>
             <!-- <h1 style="color: white; font-family: sans">Hello {{yourName}}!</h1> -->
             <ul class="listStyle">
                 <li ng-repeat="message in messages"><span style="color: white; word-wrap: break-word;">{{ message.text }}</span></li>
