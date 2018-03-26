@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="myController">
+    <div style="margin-bottom: 5px;">
+        <img src="img/cocoa.png" alt="cocoa logo" id="cocoaLogo">
+        <span style="color: white; font-size: 40px; font-family: sans;">CocoaHeads Talks BH</span>
+    </div>
+    <div id="container" style="background-color: black; border: 5px solid #E52B61; border-radius: 10px; margin-bottom: 10px;">
+        <div id="entryInputContainer">
+            <input id="entryInput" style="width: 90%" ng-keyup="$event.keyCode == 13 && addMessage()" type="text" ng-model="newMessageText" autofocus>
+            <!-- <h1 style="color: white; font-family: sans">Hello {{yourName}}!</h1> -->
+            <ul class="listStyle">
+                <li ng-repeat="message in messages"><span style="color: white; word-wrap: break-word;">{{ message.text }}</span></li>
+            </ul>
+        </div>
+        <!-- <hr> -->
+    </div>
+
+
+
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAiq-UrqjmCnVwxzUdGZYnGUv099plw9jU",
+            authDomain: "customemaillogin-35785.firebaseapp.com",
+            databaseURL: "https://customemaillogin-35785.firebaseio.com",
+            projectId: "customemaillogin-35785",
+            storageBucket: "customemaillogin-35785.appspot.com",
+            messagingSenderId: "74281369571"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <!-- App Controller -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
