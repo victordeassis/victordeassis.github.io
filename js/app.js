@@ -11,4 +11,10 @@ app.controller("myController", function ($scope, $firebaseArray) {
             text: $scope.newMessageText
         });
     };
+
+    $scope.removeElement = function (message) {
+        $scope.messages.$remove(message).then(function(ref) {
+            ref.key === message.$id; // true
+        });
+    }
 });
