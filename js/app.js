@@ -7,9 +7,14 @@ app.controller("myController", function ($scope, $firebaseArray) {
     $scope.messages = $firebaseArray(ref);
 
     $scope.addMessage = function () {
-        $scope.messages.$add({
-            text: $scope.newMessageText
-        });
+        if ($scope.newMessageText.includes('buceta') || $scope.newMessageText.includes('cu') || $scope.newMessageText.includes('viado') || $scope.newMessageText.includes('bolsonaro') || $scope.newMessageText.includes('lula') || $scope.newMessageText.includes('sexo')) {
+            alert('Achou que eu não ia me preparar pra isso? Achou errado otário!');
+        } else {
+            $scope.messages.$add({
+                text: $scope.newMessageText
+            });
+            $scope.newMessageText = "";
+        }
     };
 
     $scope.removeElement = function (message) {
